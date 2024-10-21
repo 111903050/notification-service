@@ -1,0 +1,35 @@
+env:
+  type: dev
+  name: dev
+server:
+  port: 8441
+spring:
+  application:
+    name: notification-service
+  springdoc:
+    api-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+  #mail:
+   # host: smtp.gmail.com
+   # port: 587
+   # username: repalenikhil1@gmail.com
+   # password: Chocolateboy#Einstein@11
+   # protocall: smtp
+   # properties:
+   #  mail:
+    #    smtp:
+   #       auth: true
+    #      starttls:
+     #       enable: true
+      #      required: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+
+
